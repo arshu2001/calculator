@@ -24,34 +24,7 @@ class _CalculatorState extends State<Calculator> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            TextFormField(
-              controller: text1,
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black),
-                  borderRadius: BorderRadius.circular(10)
-                ),
-                labelText: 'enter the number',
-                labelStyle: TextStyle(color: Colors.black) 
-
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 30),
-              child: TextFormField(
-                controller: text2,
-                decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black),
-                    borderRadius: BorderRadius.circular(10)
-                  ),
-                  labelText: 'enter the number',
-                  labelStyle: TextStyle(color: Colors.black) 
-              
-                ),
-              
-              ),
-            ), 
+           
             Padding(
               padding: const EdgeInsets.only(left: 310),
               child: Container(
@@ -84,8 +57,12 @@ class _CalculatorState extends State<Calculator> {
                 ),
                  Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: FloatingActionButton(onPressed: () {},
-                  child: Icon(CupertinoIcons.divide,color: Colors.deepOrange,),
+                  child: FloatingActionButton(onPressed: () {
+                    operater='~/';
+                    b=a;
+                    a=0;
+                  },
+                  child: Icon(CupertinoIcons.divide,color: Colors.deepOrange,), //divition
                   ),
                 )
               ],
@@ -124,7 +101,7 @@ class _CalculatorState extends State<Calculator> {
                     b=a;
                     a=0;
                   },
-                  child: Icon(Icons.close,color: Colors.deepOrange),
+                  child: Icon(Icons.close,color: Colors.deepOrange),  //multiplication
                   ),
                 ),
               ],
@@ -163,7 +140,7 @@ class _CalculatorState extends State<Calculator> {
                     b=a;
                     a=0;
                   },
-                  child: Icon(Icons.remove,color: Colors.deepOrange,),
+                  child: Icon(Icons.remove,color: Colors.deepOrange,), //usbsraction
                   ),
                 ),
               ],
@@ -176,7 +153,7 @@ class _CalculatorState extends State<Calculator> {
                   child: FloatingActionButton(onPressed: () {
                     a=1;
                   },
-                  child: Text('1'),
+                  child: Text('1'), //numbers
                   ),
                 ),
                 Padding(
@@ -202,7 +179,7 @@ class _CalculatorState extends State<Calculator> {
                     b=a;
                     a=0;
                   },
-                  child: Icon(Icons.add,color: Colors.deepOrange,),
+                  child: Icon(Icons.add,color: Colors.deepOrange,), //addition operate
                   ),
                 ),
               ],
@@ -240,6 +217,14 @@ class _CalculatorState extends State<Calculator> {
                     }
                     if(operater=='-'){
                       res = a-b;
+                      print(res);
+                    }
+                    if(operater=='*'){
+                      res = a*b;
+                      print(res);
+                    }
+                    if(operater=='~/'){
+                      res = a~/b;
                       print(res);
                     }
 
