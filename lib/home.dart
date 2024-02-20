@@ -31,7 +31,7 @@ class _CalculatorState extends State<Calculator> {
                 height: 40,
                 width: 60,
                 color: Colors.white,
-                child: Center(child: Text(res != null? res.toString() : '')),
+                child: Center(child: Text(res != null? res.toString() : '',style: TextStyle(fontSize: 20),)),
               ),
             ),
             Row(
@@ -154,6 +154,7 @@ class _CalculatorState extends State<Calculator> {
                     a=1;
                   },
                   child: Text('1'), //numbers
+                
                   ),
                 ),
                 Padding(
@@ -175,6 +176,7 @@ class _CalculatorState extends State<Calculator> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: FloatingActionButton(onPressed: () {
+                  
                     operater='+';
                     b=a;
                     a=0;
@@ -212,20 +214,28 @@ class _CalculatorState extends State<Calculator> {
                   child: FloatingActionButton
                   (onPressed: () {
                     if(operater=='+'){
-                      res =a+b;
-                      print(res);
+                      setState(() {
+                        res =a+b;
+                      });
+                      
                     }
                     if(operater=='-'){
-                      res = a-b;
-                      print(res);
+                      setState(() {
+                        res = a-b;
+                      });
+          
                     }
                     if(operater=='*'){ 
-                      res = a*b;
-                      print(res);
+                      setState(() {
+                        res = a*b;
+                      });
+                      
                     }
                     if(operater=='~/'){
-                      res = a~/b;
-                      print(res);
+                      setState(() {
+                        res = a~/b;
+                      });
+                      
                     }
 
                    
