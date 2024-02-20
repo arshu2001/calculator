@@ -219,7 +219,7 @@ class _CalculatorState extends State<Calculator> {
                       res = a-b;
                       print(res);
                     }
-                    if(operater=='*'){
+                    if(operater=='*'){ 
                       res = a*b;
                       print(res);
                     }
